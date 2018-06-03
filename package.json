@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "@rematch/core": "^0.6.0",
-    "react-redux": "^5.0.7"
+    "react-redux": "^5.0.7",
+    "uuid-v4": "^0.1.0"
   }
 }

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import { v4 } from 'uuid';
 
 import './index.css';
 
@@ -38,6 +39,7 @@ class ModalForm extends Component {
         }
 
         add({
+            id: v4(),
             name,
             file,
         });
@@ -49,12 +51,6 @@ class ModalForm extends Component {
         });
     };
     onChangeFile = event => {
-        const {
-            props: {
-                getNullState,
-            }
-        } = this;
-
         if (!event) {
             return;
         }
