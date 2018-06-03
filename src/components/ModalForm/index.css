@@ -34,10 +34,13 @@
     border: 1px solid grey;
     height: 55px;
     width: 265px;
-    display: block;
     margin-bottom: 10px;
-    padding: 20px;
+    padding: 10px;
     font-size: 20px;
+    color: grey;
+    display: flex;
+align-items: center;
+    font-weight: normal;
 }
 
 .form__name::-webkit-input-placeholder {
@@ -86,6 +89,12 @@
 .form__add {
     border: 1px solid #76d102;
     color: #76d102;
+}
+
+.form__invalid {
+    color: #b70e0e;
+    font-size: 12px;
+    font-weight: normal;
 }
 
 @media (max-width: 767px) {

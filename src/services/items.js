@@ -1,11 +1,11 @@
 export const items = {
-  state: 0,
+  state: [],
   reducers: {
-      setNewItem: (state, payload) => state
+      setNewItem: (state, payload) => [...state, payload],
   },
   effects: {
       add(payload,rootState) {
-          this.setNewItem();
+          this.setNewItem(payload);
       }
   },
 };
