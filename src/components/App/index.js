@@ -17,7 +17,7 @@ const App = ({modalState, checkModalState, items}) => {
                 <button className="btn-new" onClick={checkModalState}>New</button>
                 <ul className="images-list">
                     {
-                        items.length ? items.map(item => <ListItem item={item} />) : ''
+                        items.length ? items.map(item => <ListItem key={item.id} item={item} />) : ''
                     }
                 </ul>
             </div>

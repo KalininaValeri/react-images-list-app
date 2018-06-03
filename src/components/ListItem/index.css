@@ -11,6 +11,7 @@
 .card__btn-remove {
     color: #b70e0e;
     font-size: 16px;
+    cursor: pointer;
 }
 
 .card__img-wrap {
