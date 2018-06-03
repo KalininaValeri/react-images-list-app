@@ -6,7 +6,7 @@ import ModalForm from '../ModalForm';
 
 import './index.css';
 
-const App = ({modalState, checkModalState}) => {
+const App = ({modalState, checkModalState, items}) => {
     return (
         <Fragment>
             <header className="header">
@@ -16,7 +16,9 @@ const App = ({modalState, checkModalState}) => {
             <div className="container">
                 <button className="btn-new" onClick={checkModalState}>New</button>
                 <ul className="images-list">
-                    <ListItem />
+                    {
+                        items.length ? items.map(item => <ListItem item={item} />) : ''
+                    }
                 </ul>
             </div>
             {modalState && <ModalForm/>}
@@ -26,6 +28,7 @@ const App = ({modalState, checkModalState}) => {
 
 const mapState = state => ({
     modalState: state.modalState,
+    items: state.items,
 });
 const mapDispatch = ({
                          modalState: {checkModalState}
