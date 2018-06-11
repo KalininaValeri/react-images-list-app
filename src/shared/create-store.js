@@ -1,6 +1,7 @@
 import { init } from '@rematch/core';
 import { items } from '../services/items';
 import { modalState } from '../services/modalState';
+import { modalStateImg } from '../services/modalStateImg';
 import { filterByName } from '../services/filterByName';
 import { filterByCategory } from '../services/filterByCategory';
 
@@ -10,6 +11,7 @@ const store = init({
     modalState,
     filterByName,
     filterByCategory,
+    modalStateImg,
   },
 });
 

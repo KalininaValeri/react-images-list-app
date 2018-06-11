@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 
 import List from '../List';
 import ModalForm from '../ModalForm';
+import ModalImg from '../ModalImg';
 import ContainerForModal from '../ContainerForModal';
 import Filter from '../Filter';
 
 import './index.css';
 
-const App = ({modalState, checkModalState}) => {
+const App = ({modalState, checkModalState, modalStateImg}) => {
   return (
     <Fragment>
       <header className="header">
@@ -25,12 +26,18 @@ const App = ({modalState, checkModalState}) => {
         <ModalForm/>
       </ContainerForModal>
       }
+      {modalStateImg &&
+      <ContainerForModal>
+        <ModalImg/>
+      </ContainerForModal>
+      }
     </Fragment>
   );
 };
 
 const mapState = state => ({
   modalState: state.modalState,
+  modalStateImg: state.modalStateImg,
 });
 const mapDispatch = ({
                        modalState: {checkModalState},

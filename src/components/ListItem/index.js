@@ -6,7 +6,7 @@ import {categories} from '../../helpers/const';
 
 import './index.css';
 
-const ListItem = ({item, removeItem, checkModalState}) => {
+const ListItem = ({item, removeItem, checkModalState, checkModalImgState}) => {
   return (
     <li
       className="images-item"
@@ -22,7 +22,12 @@ const ListItem = ({item, removeItem, checkModalState}) => {
           </div>
         </div>
         <div className="card__img-wrap">
-          <img src={item.file} alt="" className="card__img"/>
+          <img
+            src={item.file}
+            alt={item.name}
+            className="card__img"
+            onClick={() => checkModalImgState(item.file)}
+          />
           <div className="card__hover">
             <div
               className="card__remove-mobile"
@@ -49,9 +54,10 @@ const ListItem = ({item, removeItem, checkModalState}) => {
 };
 
 const mapState = state => ({});
-const mapDispatch = ({items: {remove}, modalState: {checkModalState}}) => ({
+const mapDispatch = ({items: {remove}, modalState: {checkModalState}, modalStateImg: {checkModalImgState}}) => ({
   removeItem: id => remove(id),
   checkModalState: id => checkModalState(id),
+  checkModalImgState: str => checkModalImgState(str),
 });
 
 export default connect(mapState, mapDispatch)(ListItem);
