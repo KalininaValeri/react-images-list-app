@@ -2,7 +2,7 @@
   "name": "list-images",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://kalininavaleri.github.io/images-list-app",
+  "homepage": "https://kalininavaleri.github.io/react-images-list-app",
   "dependencies": {
     "gh-pages": "^1.2.0",
     "material-icons-react": "^1.0.0",
