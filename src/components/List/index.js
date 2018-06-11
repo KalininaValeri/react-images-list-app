@@ -1,17 +1,22 @@
-import MaterialIcon from 'material-icons-react';
-import React, {Fragment} from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import ListItem from '../ListItem';
 
 import './index.css';
-import { categories } from '../../helpers/const';
 
-const List = ({items, filterByName}) => {
+const List = ({items, filterByName, filterByCategory}) => {
+  if (!items.length) {
+    return false;
+  }
+
+  const filtersItemsByCategory = filterByCategory ? items.filter(item => item.category === parseInt(filterByCategory)) : items;
+  const filtersItems = filtersItemsByCategory.filter(item => item.name.toLowerCase().indexOf(filterByName.toLowerCase()) >=0 );
+
   return (
         <ul className="images-list">
           {
-            items.length ? items.map(item => <ListItem key={item.id} item={item} />) : ''
+            filtersItems.length ? filtersItems.map(item => <ListItem key={item.id} item={item} />) : ''
           }
         </ul>
   )
@@ -20,6 +25,7 @@ const List = ({items, filterByName}) => {
 const mapState = state => ({
   items: state.items,
   filterByName: state.filterByName,
+  filterByCategory: state.filterByCategory,
 });
 const mapDispatch = ({
                        modalState: {checkModalState}

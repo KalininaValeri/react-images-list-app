@@ -5,7 +5,7 @@ import {categories} from '../../helpers/const';
 
 import './index.css';
 
-const Filter = ({editFilterByName}) => {
+const Filter = ({editFilterByName, editFilterByCategory}) => {
   return (
     <section className="filter">
       <input
@@ -16,7 +16,9 @@ const Filter = ({editFilterByName}) => {
       />
       <select
         className="form__name filter__input"
+        onChange={event => editFilterByCategory(event.target.value)}
       >
+        <option value=''>Все категории</option>
         {categories.map(_category => <option value={_category.id} key={_category.id}>{_category.name}</option>)}
       </select>
     </section>
@@ -24,8 +26,9 @@ const Filter = ({editFilterByName}) => {
 };
 
 const mapState = state => ({});
-const mapDispatch = ({filterByName: {editFilterByName}}) => ({
+const mapDispatch = ({filterByName: {editFilterByName}, filterByCategory: {editFilterByCategory}}) => ({
   editFilterByName: name => editFilterByName(name),
+  editFilterByCategory: categoryId => editFilterByCategory(categoryId),
 });
 
 export default connect(mapState, mapDispatch)(Filter);
