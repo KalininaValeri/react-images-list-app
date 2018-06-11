@@ -6,11 +6,11 @@ import {categories} from '../../helpers/const';
 
 import './index.css';
 
-const ListItem = ({item, removeItem}) => {
+const ListItem = ({item, removeItem, checkModalState}) => {
   return (
     <li
       className="images-item"
-      onDoubleClick={() => console.log(item.id)}
+      onDoubleClick={() => checkModalState(item.id)}
       >
       <section className="card">
         <div className="card__header">
@@ -50,8 +50,9 @@ const ListItem = ({item, removeItem}) => {
 };
 
 const mapState = state => ({});
-const mapDispatch = ({items: {remove}}) => ({
+const mapDispatch = ({items: {remove}, modalState: {checkModalState}}) => ({
   removeItem: id => remove(id),
+  checkModalState: id => checkModalState(id),
 });
 
 export default connect(mapState, mapDispatch)(ListItem);

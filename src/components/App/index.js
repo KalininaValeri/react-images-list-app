@@ -38,7 +38,7 @@ const mapState = state => ({
 const mapDispatch = ({
                          modalState: {checkModalState}
                      }) => ({
-    checkModalState: () => checkModalState(true),
+    checkModalState: () => checkModalState('new'),
 });
 
 export default connect(mapState, mapDispatch)(App);

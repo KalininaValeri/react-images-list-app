@@ -1,5 +1,5 @@
 export const modalState = {
-    state: false,
+    state: null,
     reducers: {
         setModalState: (state, payload) => payload,
     },
