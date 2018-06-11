@@ -1,6 +1,9 @@
 import MaterialIcon, { colorPallet } from 'material-icons-react';
 import React from 'react';
 import { connect } from 'react-redux';
+
+import {categories} from '../../helpers/const';
+
 import './index.css';
 
 const ListItem = ({item, removeItem}) => {
@@ -37,9 +40,9 @@ const ListItem = ({item, removeItem}) => {
           </div>
         </div>
         <div className="card__caption">
-          <b>Author:</b> lorem<br/>
-          <b>Сategory:</b> lorem<br/>
-          <b>Сaption:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, qui.
+          <b>Author:</b> {item.autor}<br/>
+          <b>Сategory:</b> {categories.find(_category => item.category === _category.id).name}<br/>
+          <b>Сaption:</b> {item.caption}
         </div>
       </section>
     </li>
