@@ -1,8 +1,9 @@
-import React, {Component, Fragment} from 'react';
+import React, {Fragment} from 'react';
 import { connect } from 'react-redux';
 
 import ListItem from '../ListItem';
 import ModalForm from '../ModalForm';
+import ContainerForModal from '../ContainerForModal';
 
 import './index.css';
 
@@ -21,7 +22,11 @@ const App = ({modalState, checkModalState, items}) => {
                     }
                 </ul>
             </div>
-            {modalState && <ModalForm/>}
+            {modalState &&
+            <ContainerForModal>
+            <ModalForm/>
+            </ContainerForModal>
+            }
         </Fragment>
     )
 };

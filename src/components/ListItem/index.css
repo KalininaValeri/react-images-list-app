@@ -1,6 +1,8 @@
 .card {
     border: 1px solid grey;
     width: 200px;
+    display: flex;
+    flex-direction: column;
 }
 
 .card__header {
@@ -24,6 +26,7 @@
     align-items: center;
     justify-content: center;
     border-bottom: 1px solid grey;
+    flex: 1;
 }
 
 .card__hover {

@@ -5,7 +5,10 @@ import './index.css';
 
 const ListItem = ({item, removeItem}) => {
   return (
-    <li className="images-item">
+    <li
+      className="images-item"
+      onDoubleClick={() => console.log(item.id)}
+      >
       <section className="card">
         <div className="card__header">
           <div className="card__name">{item.name}</div>
@@ -34,8 +37,8 @@ const ListItem = ({item, removeItem}) => {
           </div>
         </div>
         <div className="card__caption">
+          <b>Author:</b> lorem<br/>
           <b>Сategory:</b> lorem<br/>
-          <b>Date:</b> 12/02/12<br/>
           <b>Сaption:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, qui.
         </div>
       </section>
