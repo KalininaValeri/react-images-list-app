@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import './index.css';
 
 const ListItem = ({item, removeItem}) => {
-    console.log(removeItem);
     return (
             <li className="images-item">
                 <section className="card">

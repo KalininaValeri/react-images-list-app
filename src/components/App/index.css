@@ -1,17 +1,3 @@
-* {
-    box-sizing: border-box;
-}
-
-html {
-    height: 100%;
-}
-
-body {
-    font-size: 20px;
-    font-weight: bold;
-    position: relative;
-}
-
 img {
     min-width: 100%;
     width: 100%;

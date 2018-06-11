@@ -19,7 +19,6 @@ export const items = {
           this.setNewItem(payload);
       },
       remove(payload, rootState) {
-          console.log(payload);
           const {items} = rootState;
           const newItems = items.filter(item => item.id !== payload);
           this.removeItem(newItems);
