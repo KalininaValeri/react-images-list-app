@@ -10,10 +10,9 @@ const ListItem = ({item, removeItem, checkModalState}) => {
   return (
     <li
       className="images-item"
-      onDoubleClick={() => checkModalState(item.id)}
       >
       <section className="card">
-        <div className="card__header">
+        <div className="card__header" onDoubleClick={() => checkModalState(item.id)}>
           <div className="card__name">{item.name}</div>
           <div
             className="card__btn-remove"
@@ -40,9 +39,9 @@ const ListItem = ({item, removeItem, checkModalState}) => {
           </div>
         </div>
         <div className="card__caption">
-          <b>Author:</b> {item.autor}<br/>
-          <b>Сategory:</b> {categories.find(_category => item.category === _category.id).name}<br/>
-          <b>Сaption:</b> {item.caption}
+          <b>Автор:</b> {item.autor}<br/>
+          <b>Категория:</b> {categories.find(_category => item.category === _category.id).name}<br/>
+          <b>Описание:</b> {item.caption}
         </div>
       </section>
     </li>
