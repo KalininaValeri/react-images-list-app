@@ -25,11 +25,13 @@ class ContainerForModal extends Component {
   onPressEsc = (event) => {
     const {
       props: {
-        checkStateModal,
+        checkModalState,
+        checkModalImgState,
       }
     } = this;
     if (event.keyCode === 27) {
-      checkStateModal();
+      checkModalState();
+      checkModalImgState();
     }
   };
 
@@ -48,8 +50,9 @@ class ContainerForModal extends Component {
   }}
 
 const mapState = state => ({});
-const mapDispatch = ({modalState: {checkModalState}}) => ({
-  checkModalState: () => checkModalState(false),
+const mapDispatch = ({modalState: {checkModalState}, modalStateImg: {checkModalImgState}}) => ({
+  checkModalState: () => checkModalState(null),
+  checkModalImgState: () => checkModalImgState(null),
 });
 
 export default connect(mapState, mapDispatch)(ContainerForModal);
