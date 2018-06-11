@@ -1,13 +1,14 @@
 import React, {Fragment} from 'react';
 import { connect } from 'react-redux';
 
-import ListItem from '../ListItem';
+import List from '../List';
 import ModalForm from '../ModalForm';
 import ContainerForModal from '../ContainerForModal';
+import Filter from '../Filter';
 
 import './index.css';
 
-const App = ({modalState, checkModalState, items}) => {
+const App = ({modalState, checkModalState}) => {
     return (
         <Fragment>
             <header className="header">
@@ -15,12 +16,9 @@ const App = ({modalState, checkModalState, items}) => {
                 <h1 className="title">Images</h1>
             </header>
             <div className="container">
-                <button className="btn-new" onClick={checkModalState}>New</button>
-                <ul className="images-list">
-                    {
-                        items.length ? items.map(item => <ListItem key={item.id} item={item} />) : ''
-                    }
-                </ul>
+              <Filter/>
+                <button className="btn-new" onClick={checkModalState}>Новая картинка</button>
+                <List />
             </div>
             {modalState &&
             <ContainerForModal>
@@ -33,7 +31,6 @@ const App = ({modalState, checkModalState, items}) => {
 
 const mapState = state => ({
     modalState: state.modalState,
-    items: state.items,
 });
 const mapDispatch = ({
                          modalState: {checkModalState}

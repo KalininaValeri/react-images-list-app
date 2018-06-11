@@ -1,0 +1,22 @@
+.filter {
+    display: flex;
+}
+
+.filter__input {
+    width: 50%;
+    margin-right: 10px;
+}
+
+.filter__input:last-child {
+    margin-right: 0;
+}
+
+@media (max-width: 767px) {
+    .filter {
+        flex-wrap: wrap;
+    }
+    .filter__input {
+        width: 100%;
+        margin-right: 0;
+    }
+}

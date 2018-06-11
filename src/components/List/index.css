@@ -1,0 +1,23 @@
+.images-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin: -25px;
+}
+
+.images-item {
+    padding: 25px;
+}
+
+@media (max-width: 767px) {
+    .images-item {
+        width: 50%;
+    }
+}
+
+@media (max-width: 577px) {
+    .images-item {
+        width: 100%;
+    }
+}

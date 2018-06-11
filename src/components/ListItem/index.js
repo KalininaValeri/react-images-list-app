@@ -1,4 +1,4 @@
-import MaterialIcon, { colorPallet } from 'material-icons-react';
+import MaterialIcon from 'material-icons-react';
 import React from 'react';
 import { connect } from 'react-redux';
 

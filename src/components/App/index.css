@@ -40,21 +40,8 @@ img {
     border-radius: 5px;
     font-weight: bold;
     height: 48px;
-    width: 122px;
     cursor: pointer;
     margin-bottom: 21px;
-}
-
-.images-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    margin: -25px;
-}
-
-.images-item {
-    padding: 25px;
 }
 
 @media (max-width: 1119px) {
